@@ -1,0 +1,43 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "build",
+            "type": "shell",
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            },
+            "windows": {
+                "command": "g++",
+                "args": [
+                    "-g",
+                    "-std=c++17",
+                    "-I${workspaceFolder}/include",
+		            "-L${workspaceFolder}/lib",
+                    "${workspaceFolder}/src/\\*.cpp",
+                    "${workspaceFolder}/src/glad.c",
+                    "-lglfw3dll",
+                    "-o",
+                    "${workspaceFolder}/output/snake.exe",
+
+                ]
+            },
+            "linux": {
+                "command": "bash",
+                "args": [
+                    "-c",
+                    "make"
+                ]
+            },
+            "osx": {
+                "command": "bash",
+                "args": [
+                    "-c",
+                    "make"
+                ]
+            }
+        },
+        
+    ]
+}
