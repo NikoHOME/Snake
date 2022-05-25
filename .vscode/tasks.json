@@ -17,9 +17,13 @@
 		            "-L${workspaceFolder}/lib",
                     "${workspaceFolder}/src/\\*.cpp",
                     "${workspaceFolder}/src/glad.c",
+                    "-lopengl32",
+                    //"-lgdi32",
+                    "-static",
                     "-lglfw3dll",
                     "-o",
-                    "${workspaceFolder}/output/snake.exe",
+                    "${workspaceFolder}/output/snake.exe"
+                    
 
                 ]
             },
